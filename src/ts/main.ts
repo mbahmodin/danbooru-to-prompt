@@ -65,7 +65,7 @@ window.addEventListener("load", (e) => {
           [
             toSpan("token size: "),
             toSpan("0", "d2p-token-size"),
-            toSpan("/75"),
+            toSpan("/150"),
           ].join("")
         ),
       ].join("")
