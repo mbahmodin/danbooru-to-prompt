@@ -155,7 +155,7 @@ window.addEventListener("load", (e) => {
   document
     .getElementById("d2p-copy")
     ?.addEventListener("click", (button: MouseEvent) => {
-      const output = getChecked().join(" ");
+      const output = getChecked().join(", ").split('_').join(' ');
       console.log(`${HEADER}\n${output}`);
       return navigator.clipboard
         .writeText(output)
