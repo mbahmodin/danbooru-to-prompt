@@ -26,9 +26,3 @@ jobs:
       run: |
         npm install
         npx webpack --mode production
-        npm run build
-        
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.1.0
-      with:
-        path: target
