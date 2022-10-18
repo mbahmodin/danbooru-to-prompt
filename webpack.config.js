@@ -1,6 +1,5 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 module.exports = {
   mode: process.env.NODE_ENV || "development",
@@ -32,10 +31,6 @@ module.exports = {
         { from: "manifest.json", to: "../", context: "src" },
         { from: "LICENCE", to: "../" },
       ],
-    }),
-    new BundleAnalyzerPlugin({
-      // generate the stats.json file
-      generateStatsFile: true
     }),
   ],
 };
