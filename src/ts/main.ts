@@ -145,7 +145,7 @@ window.addEventListener("load", (e) => {
       sort(tagList).forEach((value: Element) => {
         const input: string | null = value.getAttribute("data-tag-name");
         if (input == null) return;
-        if (length + clacTokenSize(input) > 75) return;
+        if (length + clacTokenSize(input) > 150) return;
         (value.querySelector(checkboxQuery) as HTMLInputElement).checked = true;
         length += clacTokenSize(input);
       });
