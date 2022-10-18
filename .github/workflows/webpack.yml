@@ -30,10 +30,5 @@ jobs:
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: dist-without-markdown
-        path: |
-          dist
-          !dist/**/*.md
-        
-    - name: Download all workflow run artifacts
-      uses: actions/download-artifact@v3
+        name: artifact
+        path: target/
