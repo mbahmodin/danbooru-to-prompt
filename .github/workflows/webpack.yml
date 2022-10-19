@@ -27,14 +27,8 @@ jobs:
         npm install
         npx webpack --mode production
 
-    - name: Extract current branch name
-      shell: bash
-      # bash pattern expansion to grab branch name without slashes
-      run: ref="${GITHUB_REF#refs/heads/}" && echo "::set-output name=branch::${ref////-}"
-      id: ref
-
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
-        name: d2p-chrome-extension-${{ steps.ref.outputs.branch }}
+        name: d2p-chrome-extension-${{ github.run_attempt }}
         path: dist
