@@ -59,13 +59,12 @@ window.addEventListener("load", (e) => {
     "afterbegin",
     toTagList(
       [
-        toButton("auto select", "d2p-auto-select"),
+        toButton("select all", "d2p-auto-select"),
         toButton("copy to clipboard", "d2p-copy"),
         toParagraph(
           [
             toSpan("token size: "),
             toSpan("0", "d2p-token-size"),
-            toSpan("/150"),
           ].join("")
         ),
       ].join("")
@@ -142,12 +141,11 @@ window.addEventListener("load", (e) => {
           false;
       });
       let length = getTokenSize();
-      sort(tagList).forEach((value: Element) => {
-        const input: string | null = value.getAttribute("data-tag-name");
-        if (input == null) return;
-        if (length + clacTokenSize(input) > 150) return;
-        (value.querySelector(checkboxQuery) as HTMLInputElement).checked = true;
-        length += clacTokenSize(input);
+        sort(tagList).forEach((value: Element) => {
+          const input: string | null = value.getAttribute("data-tag-name");
+          if (input == null) return;
+          (value.querySelector(checkboxQuery) as HTMLInputElement).checked = true;
+          length += clacTokenSize(input);
       });
       changeTokenSize();
     });
